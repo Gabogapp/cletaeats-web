@@ -212,10 +212,18 @@ export default function RestaurantesPage() {
       toast.error('Completa todos los campos'); return;
     }
     setSaving(true);
+    const payload = {
+      nombre: nombre,
+      cedulaJuridica: cedula_juridica,
+      direccion: direccion,
+      tipoComida: tipo_comida
+    };
     try {
-      await crearRestaurante(form);
+      await crearRestaurante(payload);
       toast.success('Restaurante registrado');
-      setModalNew(false); setForm(EMPTY_REST); load();
+      setModalNew(false);
+      setForm(EMPTY_REST);
+      load();
     } catch (e) { toast.error(e.message || 'Error'); } finally { setSaving(false); }
   };
 
