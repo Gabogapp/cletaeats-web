@@ -24,7 +24,7 @@ export const activarCliente = (id) => request('PATCH', `/clientes/${id}/activar`
 export const suspenderCliente = (id) => request('PATCH', `/clientes/${id}/suspender`);
 
 // ── REPARTIDORES ──────────────────────────────────────────────
-export const getRepartidores = () => request('GET', '/repartidores');
+export const getRepartidores = () => request('GET', '/repartidores/todos');
 export const getRepartidorDisponible = () => request('GET', '/repartidores/disponible');
 export const crearRepartidor = (data) => request('POST', '/repartidores', data);
 export const getQuejas = (id) => request('GET', `/repartidores/${id}/quejas`);
